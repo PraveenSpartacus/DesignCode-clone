@@ -1,0 +1,243 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.page {
+	margin: 0 auto;
+	max-width: 1920px;
+	min-height: 100vh;
+	width: calc(100vw - calc(100vw - 100%));
+}
+
+.hero {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+}
+
+.hero > div {
+	width: 50%;
+	height: 100%;
+	border: 2px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.leftHero > .text {
+	font-size: 50px;
+	display: flex;
+}
+@keyframes fade {
+	/* 0% {
+		filter: blur(0);
+		left: 0;
+		opacity: 1;
+	}
+	30% {
+		filter: blur(25px);
+	}
+	100% {
+		filter: blur(35px);
+		left: 100px;
+		opacity: 1;
+	} */
+	25% {
+		opacity: 1;
+		transform: scale(1) translateY(0px) skewX(0deg) skewY(0deg) rotateZ(0deg);
+		filter: blur(0px);
+	}
+	30% {
+		opacity: 0;
+		transform: scale(2) translateX(100px) skewX(10deg) skewY(10deg)
+			rotateZ(30deg);
+		filter: blur(10px);
+	}
+	35% {
+		opacity: 0;
+		transform: scale(2) translateY(-100px) skewX(10deg) skewY(10deg)
+			rotateZ(30deg);
+		filter: blur(10px);
+	}
+	95% {
+		opacity: 0;
+		transform: scale(2) translateY(-100px) skewX(10deg) skewY(10deg)
+			rotateZ(30deg);
+		filter: blur(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translateY(0px) skewX(0deg) skewY(0deg) rotateZ(0deg);
+		filter: blur(0px);
+	}
+	/* 0% {
+		left: 0;
+		transform: rotateY(0deg);
+	}
+	100% {
+		left: 200px;
+		transform: rotateY(30deg);
+	} */
+}
+.text > .letter {
+	animation-name: fade;
+	animation-duration: 6s;
+	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+.text > .letter1 {
+	/* animation: fade 4s 1s ease-in infinite; */
+	animation-delay: 0.1s;
+	position: relative;
+}
+.text > .letter2 {
+	/* animation: fade 4s 1.5s ease-in infinite; */
+	animation-delay: 0.2s;
+	position: relative;
+}
+.text > .letter3 {
+	/* animation: fade 4s 2s ease-in infinite; */
+	animation-delay: 0.3s;
+	position: relative;
+}
+.text > .letter4 {
+	/* animation: fade 4s 2.5s ease-in infinite; */
+	animation-delay: 0.4s;
+	position: relative;
+}
+.text > .letter5 {
+	/* animation: fade 4s 3s ease-in infinite; */
+	animation-delay: 0.5s;
+	position: relative;
+}
+.rightHero > .container {
+	width: 70%;
+	height: 70%;
+	background-color: antiquewhite;
+	position: relative;
+	transform-origin: center;
+}
+
+.rightHero > .container > .obj {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	position: absolute;
+	transition: all 1s ease;
+}
+
+.container:hover > .obj {
+	background-color: aqua;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+}
+
+.obj1 {
+	top: 0;
+	left: 0;
+}
+.obj2 {
+	top: 0;
+	left: calc(100% - 100px);
+}
+.obj3 {
+	top: calc(100% - 100px);
+	left: 0;
+}
+.obj4 {
+	top: calc(100% - 100px);
+	left: calc(100% - 100px);
+}
+
+/* .expt {
+	width: 100px;
+	height: 100px;
+	background-color: rgb(174, 0, 255);
+	animation: rotateMe 5s infinite linear;
+	transform-origin: center;
+}
+@keyframes rotateMe {
+	0% {
+		transform: rotateZ(0deg) rotateX(30deg);
+	}
+	100% {
+		transform: rotateZ(360deg) rotateX(30deg);
+	}
+} */
+
+/* Cards Section */
+
+.cardSection {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cardsContainer {
+	width: 65%;
+	height: 40%;
+	background-color: blueviolet;
+	position: relative;
+}
+.card {
+	position: absolute;
+	width: 335px;
+	height: 220px;
+	background-color: aliceblue;
+	border-radius: 30px;
+	transition: transform 0.6s ease-out;
+}
+.card1 {
+	top: 00px;
+	left: 0px;
+	background-color: rgb(255, 0, 0);
+}
+.card2 {
+	top: 20px;
+	left: 200px;
+	background-color: rgb(0, 238, 255);
+}
+.card3 {
+	top: 40px;
+	left: 280px;
+	background-color: rgb(145, 255, 0);
+}
+.card4 {
+	top: 60px;
+	left: 310px;
+	background-color: rgb(0, 136, 255);
+}
+
+.cardsContainer:hover .card1 {
+	transform: translate(-30px, 0px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+}
+.cardsContainer:hover .card1:hover {
+	transform: translate(-30px, -30px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+}
+
+.cardsContainer:hover .card2 {
+	transform: translate(-120px, -10px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+}
+.cardsContainer:hover .card2:hover {
+	transform: translate(-120px, -40px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+}
+
+.cardsContainer:hover .card3 {
+	transform: translate(-90px, -20px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+}
+.cardsContainer:hover .card3:hover {
+	transform: translate(-90px, -50px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+}
+
+.cardsContainer:hover .card4 {
+	transform: translate(-30px, -30px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+}
+.cardsContainer:hover .card4:hover {
+	transform: translate(-30px, -60px) skewX(-10deg) rotateZ(-10deg) scaleX(0.9);
+}
