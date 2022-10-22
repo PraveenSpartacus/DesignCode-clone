@@ -383,3 +383,173 @@ body{
   -30deg) rotateY(
   30deg) translateY(-3px);
   }
+
+
+/* ------------------------------------- */
+.mainAnimationContainer{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	/* display: none; */
+}
+
+.strokeAnimationContainer > *{
+	opacity: 0;
+	position: absolute;
+}
+
+.animate > *{
+	opacity: 1;
+}
+
+.strokeAnimationContainer{
+	position: relative;
+	width: 75%;
+	height: auto;
+}
+
+.strokebg{
+	position: absolute;
+	width: 100%;
+	transition: opacity 1s;
+}
+
+.sphere{
+	width: 36%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.animate .sphere circle{
+	stroke-dasharray: 4000;
+	stroke-dashoffset: 4000;
+	animation: 2.5s linear 1s 1 normal forwards running beGbhN;
+}
+.animate .sphere path {
+	stroke-dasharray: 100px;
+	stroke-dashoffset: 100px;
+	animation: 4s linear 2s 1 normal forwards running beGbhN;
+}
+
+@keyframes beGbhN {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+.gear1{
+	width: 37%;
+	height: auto;
+	left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+	opacity: 1;
+}
+
+.animate .gear1{
+	animation: 10s linear 1s  infinite forwards  rotateGear;
+}
+
+@keyframes rotateGear {
+	0% {
+		transform: rotate(0deg) ;
+	}
+	100% {
+		transform: rotate(360deg) ;
+	}
+}
+
+.sub1{
+	position: absolute;
+	width: 12%;
+	height: auto;
+	top: 25%;
+	left: 17%;
+}
+
+.sub2{
+	position: absolute;
+	width: 7%;
+	height: auto;
+	top: 27%;
+	right: 7%;
+	
+}
+.sub2-blur{
+	border: 15px solid rgb(254, 93, 0);
+	filter: blur(15px);
+}
+
+.sub3{
+	position: absolute;
+	width: 10%;
+	height: auto;
+	bottom: 25%;
+	left: 25%;
+}
+
+.sub4{
+	position: absolute;
+	width: 10%;
+	height: auto;
+	bottom: 35%;
+	right: 23%;
+}
+
+.animate .sub{
+	transition: opacity 0.5s 1s;
+}
+
+.strokeblur{
+	width: 37%;
+	border-radius: 50%;
+	border: 10px solid rgb(110, 214, 235);
+	filter: blur(9px) opacity(100%);
+	mix-blend-mode: color-dodge;
+}
+
+.blur1{
+	border-radius: 50%;
+	width: 25%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-80%,-80%);
+	background: radial-gradient(96.2% 54.54% at 75.6% 21.75%, rgb(255, 230, 0) 0%, rgb(255, 173, 77) 58.85%, rgb(254, 0, 61) 100%);
+	filter: blur(23px) opacity(100%);
+	mix-blend-mode: lighten;
+}
+
+.blur2{
+	width: 30%;
+	height: 30%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-25%,-80%);
+	border-radius: 50% 49% 49% 50% / 50% 47% 53% 49%;
+	background: radial-gradient(96.2% 54.54% at 75.6% 21.75%, rgb(248, 183, 57) 0%, rgb(255, 192, 36) 45.66%, rgb(254, 183, 0) 100%);
+	filter: blur(70px) opacity(100%);
+	mix-blend-mode: lighten;
+}
+
+.blur{
+	opacity: 0;
+}
+
+.animate .blur{
+	animation: 0.4s ease-in-out 3s 1 normal forwards running blurReveal;
+}
+
+@keyframes blurReveal {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 0.7;
+	}
+}
