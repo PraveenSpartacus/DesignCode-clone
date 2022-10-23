@@ -34,7 +34,8 @@ window.addEventListener('load', ()=>{
 
     // stroke animation full
     mainAnimation = () => {
-        let triggerEle = document.getElementsByClassName("strokebg")[0];
+        //let triggerEle = document.getElementsByClassName("strokebg")[0];
+        let triggerEle = document.getElementById("gear1");
         let container = document.getElementsByClassName("strokeAnimationContainer")[0];
         let triggerAnimation = (entries, observer) => {
             console.log("triggered")
